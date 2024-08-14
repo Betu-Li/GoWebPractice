@@ -20,7 +20,7 @@ func InitRouter() *gin.Engine {
 
 	router.Use(gin.LoggerWithConfig(logger.LoggerToFile()))
 	router.Use(logger.Recover)
-	store, err := sessions_redis.NewStore(10, "tcp", setting.RedisAddress, "", []byte("secret"))
+	store, err := sessions_redis.NewStore(10, "tcp", setting.Conf.RedisConfig.RedisAddress, "", []byte("secret"))
 	if err != nil {
 		fmt.Printf("Failed to create Redis store: %v\n", err)
 		panic(err)
@@ -33,5 +33,16 @@ func InitRouter() *gin.Engine {
 		user.PUT("/login", controllers.UserController{}.Login)
 	}
 
+	player := router.Group("/player")
+	{
+		player.POST("/list", controllers.PlayerController{}.GetPlayers)
+	}
+
+	vote := router.Group("/vote")
+	{
+		vote.POST("/add", controllers.VoteController{}.AddVote)
+	}
+
+	router.POST("/ranking", controllers.PlayerController{}.PlayerSortByScore)
 	return router
 }

@@ -11,16 +11,23 @@ type MySQLConfig struct {
 	DBName   string `json:"dbname"`
 }
 
+// RedisConfig Redis配置信息
+type RedisConfig struct {
+	RedisAddress  string `json:"address"`
+	RedisPassword string `json:"password"`
+	RedisDB       int    `json:"db"`
+}
+
 // AppConfig 应用配置信息
 type AppConfig struct {
 	Port         int  `json:"port"`
 	Release      bool `json:"release"`
 	*MySQLConfig `json:"database"`
+	*RedisConfig `json:"redis"`
 }
 
 var (
-	Conf         = new(AppConfig)
-	RedisAddress = "localhost:6379"
+	Conf = new(AppConfig)
 )
 
 // Init 加载配置文件
@@ -38,6 +45,11 @@ func Init(file string) error {
 		User:     cfg.Section("database").Key("user").String(),
 		Password: cfg.Section("database").Key("password").String(),
 		DBName:   cfg.Section("database").Key("dbname").String(),
+	}
+	Conf.RedisConfig = &RedisConfig{
+		RedisAddress:  cfg.Section("redis").Key("address").String(),
+		RedisPassword: cfg.Section("redis").Key("password").String(),
+		RedisDB:       cfg.Section("redis").Key("db").MustInt(0),
 	}
 	return err
 }

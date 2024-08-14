@@ -30,3 +30,13 @@ func GetUserByUsername(username string) (user *User, err error) {
 	}
 	return
 }
+
+// GetUserInfo 根据id获取用户信息
+func GetUserInfo(id int) (user *User, err error) {
+	user = new(User)
+	err = dao.DB.Debug().Where("id=?", id).First(user).Error
+	if err != nil {
+		return nil, err
+	}
+	return
+}
