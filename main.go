@@ -1,6 +1,7 @@
 package main
 
 import (
+	"GinExample2/cache"
 	"GinExample2/dao"
 	"GinExample2/pkg/logger"
 	"GinExample2/routers"
@@ -38,6 +39,9 @@ func main() {
 	}
 	//程序退出时关闭数据库连接
 	defer dao.DBClose()
+
+	// 初始化redis
+	cache.Init()
 
 	// 注册路由
 	r := routers.InitRouter()
