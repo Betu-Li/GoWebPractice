@@ -1,11 +1,11 @@
 package main
 
 import (
-	"GinExample2/cache"
-	"GinExample2/dao"
-	"GinExample2/pkg/logger"
-	"GinExample2/routers"
-	"GinExample2/setting"
+	"GoWebPractice/cache"
+	"GoWebPractice/dao"
+	"GoWebPractice/pkg/logger"
+	"GoWebPractice/routers"
+	"GoWebPractice/setting"
 	"fmt"
 	"os"
 )

@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"GinExample2/cache"
-	"GinExample2/models"
+	"GoWebPractice/cache"
+	"GoWebPractice/models"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"strconv"

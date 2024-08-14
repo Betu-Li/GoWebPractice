@@ -1,7 +1,7 @@
 package cache
 
 import (
-	"GinExample2/setting"
+	"GoWebPractice/setting"
 	"context"
 	"github.com/redis/go-redis/v9"
 	"log"

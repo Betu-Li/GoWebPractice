@@ -1,7 +1,7 @@
 package models
 
 import (
-	"GinExample2/dao"
+	"GoWebPractice/dao"
 	"github.com/jinzhu/gorm"
 )
 

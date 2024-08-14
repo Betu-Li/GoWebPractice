@@ -1,9 +1,9 @@
 package routers
 
 import (
-	"GinExample2/pkg/logger"
-	"GinExample2/routers/controllers"
-	"GinExample2/setting"
+	"GoWebPractice/pkg/logger"
+	"GoWebPractice/routers/controllers"
+	"GoWebPractice/setting"
 	"fmt"
 	"github.com/gin-contrib/sessions"
 	sessions_redis "github.com/gin-contrib/sessions/redis"

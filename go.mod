@@ -1,4 +1,4 @@
-module GinExample2
+module GoWebPractice
 
 go 1.22
 

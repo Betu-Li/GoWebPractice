@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"GinExample2/models"
+	"GoWebPractice/models"
 	"fmt"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"

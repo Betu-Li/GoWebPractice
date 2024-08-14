@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"GinExample2/models"
+	"GoWebPractice/models"
 	"github.com/gin-gonic/gin"
 	"strconv"
 )

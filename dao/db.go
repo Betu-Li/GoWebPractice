@@ -1,7 +1,7 @@
 package dao
 
 import (
-	"GinExample2/setting"
+	"GoWebPractice/setting"
 	"fmt"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
